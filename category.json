@@ -1,0 +1,22 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Электроника",
+        "description": "Все электронные устройства",
+        "created_at": "2024-12-22T20:15:20.625Z",
+        "updated_at": "2024-12-22T20:15:20.625Z"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Одежда",
+        "description": "Мужская и женская одежда",
+        "created_at": "2024-12-22T20:15:27.219Z",
+        "updated_at": "2024-12-22T20:15:27.219Z"
+    }
+}
+]
