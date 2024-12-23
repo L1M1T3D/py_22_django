@@ -1,0 +1,29 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Блог{% endblock %}
+{% block content %}
+<h1>Блог</h1>
+<div class="row">
+    {% for post in posts %}
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                {% if post.preview %}
+                    <div>
+                        <img src="{{ post.preview.url }}" alt="Image for {{ post.title }}" style="max-width: 45%; height: auto;">
+                    </div>
+                {% else %}
+                    <p>Изображения нет</p>
+                {% endif %}
+                <div class="card-body">
+                    <h5>{{ post.title }}</h5>
+                    <p class="card-text">{{ post.content|slice:":100" }}...</p>
+                        <p>Опубликовано: {{post.created_at}}</p>
+                        <p>Просмотры: {{post.views}}</p>
+                        <p>Статус публикации: {{post.is_published|yesno:"Активен,Не активен"}}</p>
+                    <a href="{% url 'blog:blog_detail' post.pk %}" class="btn btn-primary">Читать далее</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
