@@ -1,0 +1,19 @@
+<!-- catalog/templates/catalog/product_detail.html -->
+{% extends "catalog/base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="https://cdn-icons-png.flaticon.com/512/8189/8189068.png" class="img-fluid rounded" alt="{{ product.name }}">
+        </div>
+        <div class="col-md-6">
+            <h1>{{ product.name }}</h1>
+            <p class="text-muted"><strong>Цена:</strong> {{ product.price }} рублей</p>
+            <p>{{ product.description }}</p>
+            <p><strong>Дата добавления:</strong> {{ product.created_at }}</p>
+            <a href="{% url 'product_list' %}" class="btn btn-secondary">Назад к списку товаров</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
